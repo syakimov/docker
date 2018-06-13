@@ -7,3 +7,20 @@ Command Line
     commits a image (state of a container) and creates a new container
     you can later start from there
   https://docs.docker.com/engine/reference/commandline/cli/
+
+Remove image
+  docker rmi ubuntu:14.04 -f
+  https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+Build image from docker file
+  `docker build -t [repo-tag] [path]`
+  [path] == context
+    the docker client packs the path files in tar and sends them to Docker deamon
+    search for config called Dockerfile in the root context
+    -f search for diff file
+
+  Example
+    `docker build -t syakimov/hw:1.0 .`
+      use ./ for context path
+      build image in syakimov/#{IMAGE_NAME}:#{vERSION}
+      tag it as 1.0
+

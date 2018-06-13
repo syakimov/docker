@@ -34,3 +34,4 @@ inspect the log of a container
 map the ports the container exposes to the ports on the host
 
 there is a default cmd on every image and it is run if no cmd is passed
+before trying to install something on docker with `apt` first run `apt update`
