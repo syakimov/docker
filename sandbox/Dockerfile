@@ -1,10 +1,8 @@
-# Build with `docker build -t syakimov/testimg:1.0 .`
-# Run it with `docker run -it syakimov/testimg:1.0 bash`
 FROM ubuntu:14.04
-RUN apt update && apt install -y curl \
-                                 vim
+RUN apt update && apt install -y nginx
 
-# CMD ping 127.0.0.1 -c 30
-# CMD ["ping", "127.0.0.1", "-c", "30"] as json array
+# If you do not expose ports they will not be accessible form outside
+# map exposed ports to host ports: `docker run -d -p 8080:80 nginx:1.7`
+EXPOSE 80 443
 
-ENTRYPOINT ["ping"]
+CMD ["nginx", "-g", "daemon off;"]
