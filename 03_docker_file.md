@@ -9,6 +9,11 @@ CMD -> If you do not specify cmd it runs the default cmd
 It is recommended to use aggregation of `RUN` cmd `&&`
   -> docker commits container on each run which is useless
 
-ENTRYPOINT -> always run on docker execute
+Cannot mount volumes from host
+VOLUME /myvol
+VOLUME ["myvol1", "myvol2"]
 
+ENTRYPOINT -> always run on docker execute
 ENTRYPOINT ["ping"]
+
+EXPOSE 80 443
